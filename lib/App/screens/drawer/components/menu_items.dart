@@ -5,7 +5,8 @@ import 'package:pet_adoption/App/screens/drawer/historypage/adoptedpets.dart';
 import 'package:pet_adoption/App/utils/widgets/spacing_widgets.dart';
 
 class MenuItems extends StatelessWidget {
-  const MenuItems({super.key});
+  Color color;
+  MenuItems({super.key,required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,8 @@ class MenuItems extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 18.0),
           child: GestureDetector(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => AdoptedPets()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AdoptedPets(color:color)));
             },
             child: Row(
               children: <Widget>[

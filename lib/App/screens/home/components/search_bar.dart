@@ -76,8 +76,7 @@ class _SearchBarState extends State<SearchBar> {
             ],
           ),
         ),
-        addVerticalSpace(25.0),
-        const Categories(),
+
         Expanded(
           child: BlocBuilder<PetsBloc, PetsState>(
             builder: (context, state) {

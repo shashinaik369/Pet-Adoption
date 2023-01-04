@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:pet_adoption/App/models/pet_model.dart';
+import 'package:pet_adoption/App/models/sample_data.dart';
 import 'package:pet_adoption/App/screens/details/components/custom_nav_drawer.dart';
 import 'package:confetti/confetti.dart';
 import 'components/cat_details.dart';
@@ -55,13 +56,18 @@ class _PetDetailsPageState extends State<PetDetailsPage> {
               itemCount: widget.pet.images.length,
               controller: _pageViewController,
               itemBuilder: (context, index) {
-                return Container(
-                  padding: const EdgeInsets.all(24.0),
-                  decoration: BoxDecoration(color: widget.pet.color),
-                  child: InteractiveViewer(
-                    child: Image.asset(
-                      widget.pet.images[index],
-                      fit: BoxFit.contain,
+                return Hero(
+             
+                  transitionOnUserGestures: true,
+                  tag: widget.pet.images,
+                  child: Container(
+                    padding: const EdgeInsets.all(24.0),
+                    decoration: BoxDecoration(color: widget.pet.color),
+                    child: InteractiveViewer(
+                      child: Image.asset(
+                        widget.pet.images[index],
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 );

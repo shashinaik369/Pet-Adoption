@@ -9,7 +9,8 @@ import '../../../utils/constants.dart';
 import '../../../utils/widgets/spacing_widgets.dart';
 
 class AdoptedPets extends StatelessWidget {
-  const AdoptedPets({super.key});
+  Color color;
+  AdoptedPets({super.key,required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,8 @@ class AdoptedPets extends StatelessWidget {
         return Scaffold(
           body: SafeArea(
             child: Container(
-              color: Colors.grey[200],
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              color: color,
               child: Column(
                 children: [
                   Row(
@@ -27,13 +29,13 @@ class AdoptedPets extends StatelessWidget {
                         onPressed: () => Navigator.pop(context),
                         icon: const Icon(
                           Icons.arrow_back_ios_new,
-                          color: primaryColor,
+                          color: Colors.white,
                           size: 20.0,
                         ),
                       ),
                       const FaIcon(
                         FontAwesomeIcons.paw,
-                        color: primaryColor,
+                        color: Colors.white,
                       ),
                       addHorizontalSpace(15.0),
                       Text(
@@ -41,7 +43,7 @@ class AdoptedPets extends StatelessWidget {
                         style: GoogleFonts.montserrat(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
-                          color: primaryColor,
+                          color: Colors.white,
                         ),
                       ),
                     ],

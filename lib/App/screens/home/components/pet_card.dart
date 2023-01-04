@@ -26,7 +26,10 @@ class PetCard extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.centerLeft,
-            child: PetCardImage(size: size, pet: pet),
+            child: Hero(
+              transitionOnUserGestures: true,
+              tag: pet.images,
+              child: PetCardImage(size: size, pet: pet)),
           ),
         ],
       ),

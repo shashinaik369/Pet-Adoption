@@ -38,6 +38,7 @@ class _PetsAvailableState extends State<PetsAvailable> {
                 : pets.length,
             // pets.length,
             itemBuilder: (context, index) {
+              final tag = pets[index].images;
               return GestureDetector(
                 onTap: () {
                   WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
@@ -48,7 +49,6 @@ class _PetsAvailableState extends State<PetsAvailable> {
                             ? widget.searchedList[index]
                             : pets[index],
                         //pets[index],
-                        
                       ),
                     ),
                   );
